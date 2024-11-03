@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkour Cipher</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            0% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+        .animate-fade {
+            animation: fadeIn 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="max-w-3xl mx-auto p-6">
+        <div class="text-center mb-12 mt-8">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">Parkour Cipher</h1>
+            <p class="text-gray-600">Ancient parkour arts; made easy!</p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <textarea 
+                id="inputText" 
+                class="w-full h-32 p-4 mb-6 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none outline-none transition-all duration-200"
+                placeholder="Enter your text here..."></textarea>
+
+            <div class="flex gap-4 mb-6">
+                <button 
+                    id="encodeBtn"
+                    onclick="encodeText()"
+                    class="flex-1 bg-gray-100 text-gray-700 py-3 px-6 rounded-lg hover:bg-gray-200 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                    Encode
+                </button>
+                <button 
+                    id="decodeBtn"
+                    onclick="decodeText()"
+                    class="flex-1 bg-gray-100 text-gray-700 py-3 px-6 rounded-lg hover:bg-gray-200 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                    Decode
+                </button>
+            </div>
+
+            <div id="outputContainer" class="bg-gray-50 rounded-lg p-6 border border-gray-100">
+                <h2 class="text-sm font-medium text-gray-600 mb-3">Output</h2>
+                <p id="outputText" class="font-mono text-gray-800 break-all"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="cipher.js"></script>
+</body>
+</html>
